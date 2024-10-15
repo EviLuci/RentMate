@@ -1,4 +1,5 @@
-# RentMate
+# RentMate (WIP Project)
+Learning Flutter while building a real project
 
 ## Objectives of the Project
 
