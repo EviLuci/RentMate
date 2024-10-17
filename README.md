@@ -1,14 +1,29 @@
-# RentMate (WIP Project)
-Learning Flutter while building a real project
+<h1>RentMate (WIP Project)</h1>
+Learning Flutter while building a project
+
+
+<h1>Table of Contents</h1>
+
+- [Objectives of the Project](#objectives-of-the-project)
+- [Intended Project Structure](#intended-project-structure)
+- [Explanation of the Structure](#explanation-of-the-structure)
+
 
 ## Objectives of the Project
+<details>
+<summary>Click to expand</summary>
 
 - To develop a badge system where users can earn badge for achievements and legitimacy by providing legal document like business registration certificate to the platform.
 - To develop a monitoring system for usage of rental items that monitors equipment usage beyond agreed rental terms and push notifications accordingly. Renters can request rental extensions directly within the app if needed, allowing both the owner and renter to agree on an extended rental period with updated pricing.
 - To incorporate built-in chat with canned responses and push notification features within the application to facilitate seamless communication between users and ensure timely updates regarding rental transactions, price drops, warnings, achievements etc.
 - To develop a filter mechanism so that users can find products to rent easily.  Users can also "favorite" or save items they’re interested in renting for later. This could be as simple as adding a heart or bookmark icon next to listings.
 
+</details>
+
 ## Intended Project Structure
+<details>
+<summary>Click to expand</summary>
+
 ```
 lib/
 │
@@ -49,8 +64,11 @@ lib/
 └── theme/                        # App-wide theme and styling (colors, fonts, etc.)
 
 ```
+</details>
 
 ## Explanation of the Structure
+<details>
+<summary>Click to expand</summary>
 
 1. core/: Contains core parts of the application like constants (for colors, strings), services, utility classes, and shared models (data structures).
 
@@ -76,3 +94,5 @@ lib/
 5. routes/: Centralized routing system to manage navigation across screens, using named routes.
 
 6. theme/: Contains all app-wide styles such as colors, fonts, and other theme-related settings.
+
+</details>
