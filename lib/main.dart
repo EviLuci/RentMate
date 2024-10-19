@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:rentmate/routes/app_routes.dart';
 import 'package:rentmate/theme/app_theme.dart';
+import 'package:provider/provider.dart';
+import 'package:rentmate/core/services/auth_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,11 +17,16 @@ class RentMateApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'RentMate',
-      theme: AppTheme.lightTheme,
-      initialRoute: AppRoutes.login,
-      onGenerateRoute: AppRoutes.generateRoute,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthService()),
+      ],
+      child: MaterialApp(
+        title: 'RentMate',
+        theme: AppTheme.lightTheme,
+        initialRoute: AppRoutes.login,
+        onGenerateRoute: AppRoutes.generateRoute,
+      ),
     );
   }
 }
