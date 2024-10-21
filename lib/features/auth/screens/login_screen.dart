@@ -5,11 +5,11 @@ import 'package:rentmate/theme/app_theme.dart';
 import 'package:rentmate/core/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatefulBuilder {
-  const LoginScreen({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {

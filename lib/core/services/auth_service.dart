@@ -36,4 +36,6 @@ class AuthService with ChangeNotifier {
       return e.toString();
     }
   }
+
+  signIn(String email, String password) {}
 }

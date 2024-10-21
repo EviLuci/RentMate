@@ -6,6 +6,8 @@ class AppRoutes {
   static const String login = '/login';
   static const String register = '/register';
 
+  static String home;
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case login:
