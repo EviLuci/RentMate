@@ -38,4 +38,6 @@ class AuthService with ChangeNotifier {
   }
 
   signIn(String email, String password) {}
+
+  register(String email, String password) {}
 }
