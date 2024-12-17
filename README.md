@@ -1,6 +1,8 @@
 <h1>RentMate (WIP Project)</h1>
 Learning Flutter while building a project
 
+
+
 > Note: These docs are subjected to changes as the project progress
 
 <h1>Table of Contents</h1>
