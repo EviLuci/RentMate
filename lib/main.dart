@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rentmate/routes/app_routes.dart';
 import 'package:rentmate/theme/app_theme.dart';
 import 'firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,6 +24,8 @@ class RentMateApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         darkTheme: AppTheme.darkTheme,
         themeMode: ThemeMode.system,
+        initialRoute: AppRoutes.splash,
+        onGenerateRoute: AppRoutes.generateRoute,
         home: Scaffold(
           appBar: AppBar(title: Text('RentMate')),
           body: Center(child: Text('Welcome to RentMate')),
