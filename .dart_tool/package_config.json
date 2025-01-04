@@ -171,7 +171,7 @@
     },
     {
       "name": "flutter_native_splash",
-      "rootUri": "file:///home/sujan/.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.3",
+      "rootUri": "file:///home/sujan/.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.4",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -422,7 +422,7 @@
       "languageVersion": "3.6"
     }
   ],
-  "generated": "2024-12-28T18:03:28.336150Z",
+  "generated": "2025-01-01T16:03:28.866529Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///home/sujan/flutter",
