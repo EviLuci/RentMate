@@ -32,6 +32,8 @@ class LoginScreen extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text(state.message)),
                   );
+                } else if (state is AuthSuccess) {
+                  Navigator.of(context).pushReplacementNamed('/home');
                 }
               },
               builder: (context, state) {

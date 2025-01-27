@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentmate/core/services/firebase_service.dart';
 import 'package:rentmate/dependency_injection/service_locator.dart';
@@ -17,8 +16,6 @@ class AuthCubit extends Cubit<AuthState> {
         await _firebaseService.signInWithEmailAndPassword(email, password);
     if (user != null) {
       emit(AuthSuccess(user));
-      // Redirect to home screen
-      Navigator.of(context).pushReplacementNamed('/home');
     } else {
       emit(AuthFailure('Login Failed. Please check your credentials.'));
     }
@@ -31,8 +28,6 @@ class AuthCubit extends Cubit<AuthState> {
         email, password, userData);
     if (user != null) {
       emit(AuthSuccess(user));
-      // Redirect to home screen
-      Navigator.of(context).pushReplacementNamed('/home');
     } else {
       emit(AuthFailure('Registration Failed. Please try again.'));
     }
