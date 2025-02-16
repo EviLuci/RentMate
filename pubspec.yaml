@@ -44,6 +44,8 @@ dependencies:
   equatable: ^2.0.7
   get_it: ^8.0.3
   go_router: ^14.7.1
+  bloc: ^8.1.4
+  flutter_local_notifications: ^18.0.1
 
 dev_dependencies:
   flutter_test:

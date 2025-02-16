@@ -1,35 +1,40 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rentmate/core/services/firebase_service.dart';
-import 'package:rentmate/dependency_injection/service_locator.dart';
+import 'package:equatable/equatable.dart';
+import 'package:rentmate/features/auth/services/auth_service.dart';
 
 part 'auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  final FirebaseService _firebaseService = sl<FirebaseService>();
+  final AuthService _authService;
 
-  AuthCubit() : super(AuthInitial());
+  AuthCubit(this._authService) : super(AuthInitial());
 
-  Future<void> login(String email, String password) async {
+  // Login
+  void login(String email, String password) async {
     emit(AuthLoading());
-    final user =
-        await _firebaseService.signInWithEmailAndPassword(email, password);
-    if (user != null) {
-      emit(AuthSuccess(user));
-    } else {
-      emit(AuthFailure('Login Failed. Please check your credentials.'));
+    try {
+      await _authService.signInWithEmailAndPassword(email, password);
+      emit(AuthSuccess());
+    } catch (e) {
+      emit(AuthFailure(e.toString()));
     }
   }
 
-  Future<void> register(
-      String email, String password, Map<String, dynamic> userData) async {
+  void register(String email, String password) async {
     emit(AuthLoading());
-    final user = await _firebaseService.registerWithEmailAndPassword(
-        email, password, userData);
-    if (user != null) {
-      emit(AuthSuccess(user));
-    } else {
-      emit(AuthFailure('Registration Failed. Please try again.'));
+    try {
+      await _authService.registerWithEmailAndPassword(email, password);
+    } catch (e) {
+      emit(AuthFailure(e.toString()));
+    }
+  }
+
+  void signOut() async {
+    try {
+      await _authService.signOut();
+      emit(AuthInitial());
+    } catch (e) {
+      emit(AuthFailure(e.toString()));
     }
   }
 }
